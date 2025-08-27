@@ -90,7 +90,7 @@ local function encode_table(val, stack)
 	if nLen > length then
 		length = nLen
 	end
-	if array and not (length > SPARSELIMIT and count ~= length) then	-- Check Array detected but sparse > 100 length then treat as object
+	if array and not (length > json.SPARSELIMIT and count ~= length) then	-- Check Array detected but sparse > 100 length then treat as object
 		-- Encode
 		for i=1,length do
 			table.insert(res, encode(val[i], stack))
